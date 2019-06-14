@@ -1,0 +1,44 @@
+﻿
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<link rel="stylesheet" type="text/css"  href="css_forms.css" />
+</head>
+<body>
+    <div class="formulario">
+    	<h1 class="text-center"> Cadastro de Usu&aacute;rio </h1>
+    		<form class="form" action="/adduser" method="post">
+        		<p><input type="text" placeholder="Usuário" name="username" /></p>
+        		<p><input type="text" placeholder="Email" name="useremail" required /></p>
+		        <p><input type="password" placeholder="Senha" name="password" required minlength="6" maxlength="15">
+		        <p><input type="password" placeholder="Confirme Senha" name="copassword" required minlength="6" maxlength="15" required>
+		        <p><input class="botao" type="submit" value="Cadastrar" /></p>
+    		</form>
+    </div>
+</body>
+
+<script>
+		$(document).ready(function () {
+			$('#logo').addClass('animated fadeInDown');
+			$("input:text:visible:first").focus();
+		});
+		$('#username').focus(function () {
+			$('label[for="username"]').addClass('selected');
+		});
+		$('#username').blur(function () {
+			$('label[for="username"]').removeClass('selected');
+		});
+		$('#password').focus(function () {
+			$('label[for="password"]').addClass('selected');
+		});
+		$('#password').blur(function () {
+			$('label[for="password"]').removeClass('selected');
+		});
+		$('#useremail').focus(function () {
+			$('label[for="useremail"]').addClass('selected');
+		});
+		$('#useremail').blur(function () {
+			$('label[for="useremail"]').removeClass('selected');
+		});
+	</script>
+</html>
